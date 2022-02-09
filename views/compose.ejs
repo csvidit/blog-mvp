@@ -1,0 +1,22 @@
+<%- include("partials/header") -%>
+
+<body class="bg-black text-white">
+  <%- include("partials/nav") -%>
+  <main>
+    <h1 class="display-1 text-center gradient-text">compose new post</h1>
+    <form class="text-dark" action="/compose" method="POST" name="blog-compose">
+      <div class="mb-3 form-floating">
+				<input type="text" class="form-control" name="NewPostTitle" id="post-title" placeholder="Title" required="">
+				<label class="" for="floatingInput" placeholder="First and Last">Title</label>
+			</div>
+      <div class="mb-3 form-floating form-group">
+        <div class="form-group">
+          <label for="floatingInput"></label>
+          <textarea class="form-control" id="TextArea" rows="10" name="NewPostContent"></textarea>
+        </div>
+      </div>
+      <button class="btn btn-outline-light" type="submit">Post</button>
+    </form>
+  </main>
+</body>
+<%- include("partials/footer") -%>

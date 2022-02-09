@@ -1,0 +1,29 @@
+<%- include("partials/header") -%>
+<body class="bg-black text-white">
+<%- include("partials/nav") -%>
+<main>
+  <h1 class="display-1 text-center gradient-text">welcome to my experimental blog</h1>
+  <% posts.forEach(function(post) {%>
+    <h3><%= post.title %></h3>
+    <%
+      var reqTitle="";
+      const postTitleWords = post.title.split(" ");
+      for(var i = 0; i<postTitleWords.length; i++)
+      {
+        if(i === postTitleWords.length-1)
+        {
+          reqTitle+=postTitleWords[i];
+        }
+        else
+        {
+          reqTitle+=postTitleWords[i]+"-";
+        }
+
+      };
+      %>
+    <p><%= post.content.substring(0,100)%>  ...   <a class="link" target="_blank" href="/posts/<%=reqTitle%>">Read More</a></p>
+  <% }); %>
+    <br><br><br><br>
+</main>
+</body>
+<%- include("partials/footer") -%>
